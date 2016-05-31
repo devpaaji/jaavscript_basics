@@ -1,0 +1,37 @@
+</doctype html>
+
+<head>
+
+</head>
+
+<body>
+
+<input type="text" id="value">
+
+<button id="get" type="button">Calculate Area</button>
+
+<p id="display"></p>
+
+
+
+<script lan="javascript">
+
+function calcArea(r){
+	var val = document.getElementById("value").value;
+	var area= 3.14 * r * r;
+	var result = val * area;
+	return result;
+}
+
+get.onclick= function(){
+
+	var show = document.getElementById("display");
+	//The textContent property can be read like any variable to show the current value.
+	show.textContent = "The Area for circle is " + calcArea(document.getElementById("value").value);
+}
+
+
+</script>
+</body>
+
+</html>
