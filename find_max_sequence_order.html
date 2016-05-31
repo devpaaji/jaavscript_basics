@@ -1,0 +1,70 @@
+</doctype html>
+
+<head>
+
+</head>
+
+<body>
+
+<h4>Find the max sequence order from the array</h4>
+
+
+
+<script>
+
+
+function maxSequence(arr){
+	  var previousVal = null;
+	  var currentSequence = [];
+	  var longestSequence = [];
+
+	  // for(var i= 0; i < arr.length; i++) {
+	  // 	if(previousVal < arr[i]) {
+	  // 		currentSequence.push() = 
+	  // 	}
+
+	  // }
+	  //https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/for...of
+	  // for is used for iterating over an array
+	  // for in is used to iterate over properties of the object
+	  // for of creates a loop iterating over iterable objects (including Array, Map, Set, String, TypedArray, arguments object and so on),
+	  for(var val of arr){
+	  	//// Test if val higher than the previous.
+	  	if(previousVal < val){
+	  		  currentSequence.push(val);
+	  	}else{
+	  		// Start a new sequence.
+      		currentSequence = [val];
+	  	}
+
+	  	 previousVal = val;
+
+	  	 // Check if our current sequence exceeds our highest.
+	    if (longestSequence.length < currentSequence.length) {
+	      longestSequence = currentSequence;
+	    }
+
+	}
+
+	  return "[" + longestSequence.join(", ") + "]";
+
+}	
+
+console.log(maxSequence([3, 2, 3, 4, 2, 2, 4]));
+console.log(maxSequence([10, 8, 34, 6, 7, 8, 9]));
+
+// var iterable = [10, 20, 30];
+
+// for (var value of iterable) {
+//   console.log(value);
+// }
+// // 10
+// // 20
+// // 30
+
+</script>
+
+
+</body>
+
+</html>

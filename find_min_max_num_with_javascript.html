@@ -1,0 +1,67 @@
+
+</doctype html>
+
+<head>
+
+</head>
+
+<body>
+
+<h4>Find the min and max numbers using JavaScript</h4>
+
+<p> The list of numbers are <strong>10, 20, 30, 4, 56, 98, 23</strong></p>
+
+
+
+<button id="maxN" type="button">Display Max Number</button>
+<p id="max"></p>
+
+<button id="minN" type="button">Display Min Number</button>
+<p id="min"></p>
+
+
+
+<script lan="javascript">
+
+function getMin(){
+	var arr=[10, 20, 30, 4, 56, 98, 23];
+	//et min to be the first item of your array. This way it becomes easier to loop through the array list.
+	var min = arr[0];
+
+	for(var i=0; i < arr.length; i++){
+		if(arr[i] < min) {
+			min = arr[i]
+		}
+	}
+	return min;
+}
+
+function getMax(){
+
+	var arr=[10, 20, 30, 4, 56, 98, 23];
+	//set max to be the first item of your array. This way it becomes easier to loop through the array list
+	var max = arr[0];
+	for(var i=0; i < arr.length; i++){
+		if(arr[i] > max) {
+			max = arr[i]
+		}
+	}
+	return max;
+}
+
+
+maxN.onclick = function(){
+	var max=  document.getElementById("max");
+	max.textContent= "The max number is " + getMax();
+	// when i remove the parenthesis it displays the whole code. The difference is that calling it with no parenthesis is your just calling the method but not the value of that method and calling it with parenthesis returns some value
+}
+
+minN.onclick = function(){
+	var min=  document.getElementById("min");
+	min.textContent = "The min number is " + getMin();
+}
+</script>
+
+</body>
+
+</html>
