@@ -1,0 +1,57 @@
+</doctype html>
+
+  <head>
+        <title>Hide odd rows</title>
+        <meta charset="UTF-8">
+  </head>
+
+<body>
+
+<table id="myTable">
+  <tr>
+    <td>cell 1</td>
+  </tr>
+ <tr>
+    <td>cell 2</td>
+ </tr>
+  <tr>
+    <td>cell 3</td>
+ </tr>
+ <tr>
+    <td>cell 4</td>
+ </tr>
+ <tr>
+    <td>cell 5</td>
+ </tr>
+</table>
+
+<button id="hide" type="button">Hide Rows</button>
+
+<script>
+
+hide.onclick= function(){
+
+	// get the length of the row	
+	 var rows_len = document.getElementById('myTable').rows.length;
+	 // run a for loop to iterate over the row count and increment by 2. remember we have to get the odd values and indexing starts at 0
+	 for(var i=0; i < rows_len; i+=2){
+	 	//target the tr tag and pass the i with in the item method to fetch the current row
+		var tbl = document.getElementsByTagName('tr').item(i);
+			tbl.style.display = "none";
+		}
+
+		// this is another method of doing the problem using querySelectorAll. A new and better way of managing the problem.
+		
+		// var rows = document.querySelectorAll('table tr');
+			
+		// 	for (var i = 0; i < rows.length; i += 2) {
+		// 		rows[i].style.display = 'none';
+		// 	}
+
+}
+
+</script>
+
+</body>
+
+</html>
