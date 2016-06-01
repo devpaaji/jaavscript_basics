@@ -1,0 +1,41 @@
+</doctype html>
+
+<head>
+
+</head>
+
+<body>
+
+
+
+<input type="text" id="text">
+
+
+<script>
+
+// 1. we are using an onchange function. onchange occurs when the element loses focus, after the content has been changed.
+
+text.onchange = function(){
+	//2. create a variable txt to get the id=text
+	var txt = document.getElementById("text");
+
+	//3. To know if the value is a number or not, we can use in-built JS function isNaN(var) to get the result
+	 if(isNaN(txt.value)){
+	 //4. If the above statement is true, we change the text bg color.	
+	 	txt.style.backgroundColor = "red";
+	 //5. we used readOnly to freeze the input type. Set it to true. There is a difference between disabled and readOnly elems. Disabled elems are not send to the server where as readOnly text do!	
+	 	txt.readOnly= true;
+	 }else{
+	 	
+	 	alert("This is a number");
+	 }
+
+}
+
+</script>
+
+
+
+</body>
+
+</html>
